@@ -42,12 +42,12 @@ body{font-family:'Open Sans',sans-serif;background:var(--white);color:var(--dark
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 
+/* ── SVG ICONS ── */
+.ico{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ico svg{display:block;}
+
 /* ── TOP BAR ── */
-.topbar{
-  background:var(--navy);
-  padding:9px 0;
-  border-bottom:3px solid var(--amber);
-}
+.topbar{background:var(--navy);padding:9px 0;border-bottom:3px solid var(--amber);}
 .topbar-inner{
   max-width:1200px;margin:0 auto;padding:0 48px;
   display:flex;align-items:center;justify-content:space-between;
@@ -58,205 +58,134 @@ img{display:block;max-width:100%;}
 .topbar-phone{
   background:var(--amber);color:var(--navy);
   padding:5px 16px;font-weight:700;font-size:12px;letter-spacing:0.5px;
+  display:inline-flex;align-items:center;gap:7px;
 }
 
 /* ── NAV ── */
-nav{
-  background:var(--white);
-  border-bottom:1px solid var(--border);
-  height:72px;
-  position:sticky;top:0;z-index:100;
-}
+nav{background:var(--white);border-bottom:1px solid var(--border);height:72px;position:sticky;top:0;z-index:100;}
 .nav-inner{
   max-width:1200px;margin:0 auto;padding:0 48px;
   height:100%;display:flex;align-items:center;justify-content:space-between;
 }
 .nav-brand{display:flex;align-items:center;gap:16px;}
 .nav-emblem{
-  width:46px;height:46px;
-  background:var(--navy);
+  width:46px;height:46px;background:var(--navy);
   display:flex;align-items:center;justify-content:center;
   font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;
-  color:var(--amber2);letter-spacing:1px;
-  border:2px solid var(--amber);
+  color:var(--amber2);letter-spacing:1px;border:2px solid var(--amber);
 }
-.nav-name{
-  font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;
-  color:var(--navy);letter-spacing:1px;text-transform:uppercase;
-}
+.nav-name{font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;color:var(--navy);letter-spacing:1px;text-transform:uppercase;}
 .nav-sub{font-size:10px;color:var(--mid);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:1px;}
 .nav-links{display:flex;align-items:center;gap:34px;}
 .nav-links a{
   font-size:13px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;
   color:var(--dark);transition:.2s;position:relative;padding-bottom:2px;
 }
-.nav-links a::after{
-  content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;
-  background:var(--amber);transition:.2s;
-}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--amber);transition:.2s;}
 .nav-links a:hover::after{width:100%;}
-.nav-cta{
-  background:var(--amber);color:var(--navy);
-  padding:11px 24px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  transition:.2s;
-}
+.nav-cta{background:var(--amber);color:var(--navy);padding:11px 24px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:.2s;}
 .nav-cta:hover{background:var(--amber2);}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .ham span{width:24px;height:2px;background:var(--navy);}
 
 /* ── HERO ── */
-.hero{
-  position:relative;
-  min-height:90vh;
-  display:flex;align-items:center;
-  background:var(--navy);
-  overflow:hidden;
-}
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;background:var(--navy);overflow:hidden;}
 .hero-photo{
   position:absolute;inset:0;
   background-image:url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1920&q=85');
-  background-size:cover;background-position:center 40%;
-  opacity:0.22;
+  background-size:cover;background-position:center 40%;opacity:0.22;
 }
 .hero-pattern{
   position:absolute;inset:0;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px),
                    repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);
 }
-.hero-accent{
-  position:absolute;left:0;top:0;bottom:0;width:5px;
-  background:linear-gradient(to bottom,var(--amber),var(--amber3));
-}
+.hero-accent{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--amber),var(--amber3));}
 .hero-inner{
   position:relative;z-index:2;
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  width:100%;
+  max-width:1200px;margin:0 auto;padding:0 48px;width:100%;
   display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;
 }
 .hero-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:24px;
-  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--amber2);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber2);
 }
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--amber);}
 .hero h1{
-  font-family:'Oswald',sans-serif;
-  font-size:clamp(48px,5.5vw,76px);
-  font-weight:700;line-height:1.05;
-  color:var(--white);
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:20px;
+  font-family:'Oswald',sans-serif;font-size:clamp(48px,5.5vw,76px);
+  font-weight:700;line-height:1.05;color:var(--white);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;
 }
 .hero h1 span{color:var(--amber2);}
-.hero-desc{
-  font-size:16px;line-height:1.8;color:rgba(255,255,255,0.65);
-  max-width:520px;margin-bottom:40px;
-}
+.hero-desc{font-size:16px;line-height:1.8;color:rgba(255,255,255,0.65);max-width:520px;margin-bottom:40px;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
 .btn-amber{
   display:inline-flex;align-items:center;gap:9px;
   background:var(--amber);color:var(--navy);
-  padding:15px 32px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  transition:.2s;
+  padding:15px 32px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:.2s;
 }
 .btn-amber:hover{background:var(--amber2);}
 .btn-outline{
   display:inline-flex;align-items:center;gap:9px;
   border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);
-  padding:15px 28px;font-size:13px;font-weight:600;letter-spacing:0.5px;
-  transition:.2s;
+  padding:15px 28px;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:.2s;
 }
 .btn-outline:hover{border-color:var(--amber);color:var(--amber2);}
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap;}
 .hero-badge{
   display:flex;align-items:center;gap:8px;
-  border:1px solid rgba(255,255,255,0.12);
-  padding:9px 16px;
+  border:1px solid rgba(255,255,255,0.12);padding:9px 16px;
   font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);
 }
+.hero-badge .ico{width:16px;height:16px;}
 
 /* Hero card */
-.hero-card{
-  background:var(--white);
-  padding:40px 36px;
-}
+.hero-card{background:var(--white);padding:40px 36px;}
 .hcard-title{
   font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;
   color:var(--navy);text-transform:uppercase;letter-spacing:1px;
-  margin-bottom:24px;padding-bottom:16px;
-  border-bottom:2px solid var(--amber);
+  margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--amber);
 }
 .hcard-items{display:flex;flex-direction:column;gap:0;}
-.hcard-item{
-  display:flex;gap:14px;align-items:flex-start;
-  padding:16px 0;border-bottom:1px solid var(--border);
-}
+.hcard-item{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);}
 .hcard-item:last-child{border-bottom:none;}
 .hcard-icon{
-  width:38px;height:38px;flex-shrink:0;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;font-size:16px;
+  width:38px;height:38px;flex-shrink:0;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
 }
 .hcard-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
 .hcard-val{font-size:14px;font-weight:600;color:var(--navy);}
 
 /* ── TRUST STRIP ── */
 .trust{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;}
-.trust-inner{
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.trust-item{
-  padding:28px 32px;border-right:1px solid var(--border);
-  display:flex;align-items:center;gap:14px;
-}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);}
+.trust-item{padding:28px 32px;border-right:1px solid var(--border);display:flex;align-items:center;gap:14px;}
 .trust-item:last-child{border-right:none;}
-.trust-num{
-  font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1;
+.trust-icon-wrap{
+  width:48px;height:48px;flex-shrink:0;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
 }
+.trust-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1;}
 .trust-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-top:2px;}
-.trust-icon{font-size:28px;flex-shrink:0;}
 
 /* ── SECTION COMMON ── */
 .section{padding:100px 48px;}
 .section-inner{max-width:1200px;margin:0 auto;}
-.eyebrow{
-  display:flex;align-items:center;gap:12px;
-  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--amber);margin-bottom:16px;
-}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
 .eyebrow::before{content:'';width:24px;height:2px;background:var(--amber);}
-.sec-h{
-  font-family:'Oswald',sans-serif;
-  font-size:clamp(36px,4vw,54px);
-  font-weight:700;color:var(--navy);
-  text-transform:uppercase;letter-spacing:1px;line-height:1.1;
-}
+.sec-h{font-family:'Oswald',sans-serif;font-size:clamp(36px,4vw,54px);font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;line-height:1.1;}
 .sec-rule{width:56px;height:3px;background:var(--amber);margin:20px 0 32px;}
 
 /* ── HOW IT WORKS ── */
 .how{background:var(--white);}
-.steps-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:var(--border);margin-top:60px;
-}
-.step-cell{
-  background:var(--white);padding:40px 32px;
-  position:relative;transition:.2s;
-}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:60px;}
+.step-cell{background:var(--white);padding:40px 32px;position:relative;transition:.2s;}
 .step-cell:hover{background:var(--off);}
-.step-num{
-  font-family:'Oswald',sans-serif;font-size:64px;font-weight:700;
-  color:var(--light);line-height:1;margin-bottom:20px;
-  user-select:none;
+.step-num{font-family:'Oswald',sans-serif;font-size:64px;font-weight:700;color:var(--light);line-height:1;margin-bottom:20px;user-select:none;}
+.step-ico{
+  width:48px;height:48px;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
 }
-.step-icon-lg{font-size:32px;margin-bottom:16px;}
-.step-title{
-  font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;
-  color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;
-}
+.step-title{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
 .step-body{font-size:13px;line-height:1.8;color:var(--mid);}
 .step-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:.3s;}
 .step-cell:hover .step-bar{transform:scaleX(1);}
@@ -264,27 +193,16 @@ nav{
 /* ── WHY US SPLIT ── */
 .why{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
-.why-img{
-  position:relative;min-height:540px;overflow:hidden;
-}
+.why-img{position:relative;min-height:540px;overflow:hidden;}
 .why-img img{width:100%;height:100%;object-fit:cover;}
-.why-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(13,27,42,0.55),rgba(13,27,42,0.1));
-}
+.why-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,42,0.55),rgba(13,27,42,0.1));}
 .why-content{padding:80px 72px;background:var(--white);}
 .why-list{display:flex;flex-direction:column;gap:0;margin-top:40px;}
-.why-row{
-  display:flex;gap:20px;align-items:flex-start;
-  padding:22px 0;border-bottom:1px solid var(--border);
-}
+.why-row{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--border);}
 .why-row:last-child{border-bottom:none;}
 .why-check{
-  width:36px;height:36px;flex-shrink:0;
-  background:var(--amber);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:var(--navy);font-weight:900;
-  margin-top:2px;
+  width:36px;height:36px;flex-shrink:0;background:var(--amber);
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
 }
 .why-ttl{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.3px;}
 .why-body{font-size:13px;line-height:1.7;color:var(--mid);}
@@ -298,29 +216,19 @@ nav{
 .services-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px;}
 .services-note{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;align-self:end;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);}
-.svc-card{
-  background:var(--navy2);padding:36px 30px;
-  transition:.2s;position:relative;overflow:hidden;
-}
-.svc-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--amber);transform:scaleX(0);transform-origin:left;transition:.3s;
-}
+.svc-card{background:var(--navy2);padding:36px 30px;transition:.2s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:.3s;}
 .svc-card:hover{background:var(--navy3);}
 .svc-card:hover::before{transform:scaleX(1);}
-.svc-icon{font-size:28px;margin-bottom:14px;}
-.svc-name{
-  font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;
-  color:var(--white);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;
+.svc-ico{
+  width:44px;height:44px;background:rgba(217,119,6,0.15);border:1px solid rgba(217,119,6,0.3);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
 }
-.svc-price{
-  font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;
-  color:var(--amber2);letter-spacing:1px;margin-bottom:8px;
-}
+.svc-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.svc-price{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--amber2);letter-spacing:1px;margin-bottom:8px;}
 .svc-desc{font-size:12px;line-height:1.7;color:rgba(255,255,255,0.4);}
 .svc-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  margin-top:12px;
+  display:inline-flex;align-items:center;gap:6px;margin-top:12px;
   font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
   color:var(--amber);border:1px solid rgba(217,119,6,0.3);padding:4px 10px;
 }
@@ -329,22 +237,13 @@ nav{
 .reviews{background:var(--white);}
 .reviews-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .rating-block{text-align:right;}
-.rating-big{
-  font-family:'Oswald',sans-serif;font-size:80px;font-weight:700;
-  color:var(--navy);line-height:1;
-}
+.rating-big{font-family:'Oswald',sans-serif;font-size:80px;font-weight:700;color:var(--navy);line-height:1;}
 .rating-stars{color:var(--amber);font-size:20px;letter-spacing:2px;margin-top:4px;}
 .rating-count{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-top:4px;}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.rev-card{
-  border:1px solid var(--border);padding:32px;background:var(--card-bg);
-  transition:.2s;position:relative;
-}
+.rev-card{border:1px solid var(--border);padding:32px;background:var(--card-bg);transition:.2s;position:relative;}
 .rev-card:hover{border-color:var(--amber);background:var(--white);}
-.rev-quote{
-  font-size:48px;font-family:Georgia,serif;color:var(--amber);line-height:0.6;
-  margin-bottom:16px;display:block;
-}
+.rev-quote{font-size:48px;font-family:Georgia,serif;color:var(--amber);line-height:0.6;margin-bottom:16px;display:block;}
 .rev-text{font-size:13px;line-height:1.8;color:var(--dark);font-style:italic;margin-bottom:24px;}
 .rev-divider{width:32px;height:2px;background:var(--amber);margin-bottom:16px;}
 .rev-name{font-size:13px;font-weight:700;color:var(--navy);}
@@ -353,10 +252,7 @@ nav{
 
 /* ── DISCOUNT ── */
 .discount{background:var(--navy);padding:80px 48px;}
-.discount-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
-}
+.discount-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .discount .eyebrow{color:var(--amber2);}
 .discount .eyebrow::before{background:var(--amber2);}
 .discount .sec-h{color:var(--white);}
@@ -364,63 +260,22 @@ nav{
 .discount-body{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:32px;}
 .discount-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.1);}
 .d-card{background:var(--navy2);padding:32px 24px;text-align:center;}
-.d-pct{
-  font-family:'Oswald',sans-serif;font-size:72px;font-weight:700;
-  color:var(--amber2);line-height:1;
-}
+.d-pct{font-family:'Oswald',sans-serif;font-size:72px;font-weight:700;color:var(--amber2);line-height:1;}
 .d-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:8px;}
 .d-total{
-  grid-column:span 2;
-  background:var(--amber);padding:16px;text-align:center;
+  grid-column:span 2;background:var(--amber);padding:16px;text-align:center;
   font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;
   color:var(--navy);letter-spacing:1px;text-transform:uppercase;
 }
 
-/* ── AI SECTION ── */
-.ai-section{
-  background:var(--off);border-top:1px solid var(--border);
-  padding:100px 48px;text-align:center;
-}
-.ai-inner{max-width:600px;margin:0 auto;}
-.ai-ring-wrap{position:relative;width:112px;height:112px;margin:0 auto 40px;}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.12);opacity:0.2}}
-.ai-ring-1{position:absolute;inset:0;border-radius:50%;border:2px solid var(--amber);animation:pulse 2.2s ease-in-out infinite;}
-.ai-ring-2{position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(217,119,6,0.4);animation:pulse 2.2s ease-in-out infinite .4s;}
-.ai-ring-3{position:absolute;inset:-24px;border-radius:50%;border:1px solid rgba(217,119,6,0.15);animation:pulse 2.2s ease-in-out infinite .8s;}
-.ai-core{
-  position:absolute;inset:0;border-radius:50%;
-  background:var(--navy);border:2px solid var(--amber);
-  display:flex;align-items:center;justify-content:center;font-size:40px;
-}
-.ai-section .eyebrow{justify-content:center;color:var(--amber);}
-.ai-section .eyebrow::before{background:var(--amber);}
-.ai-section .sec-h{color:var(--navy);font-size:clamp(32px,3.5vw,48px);}
-.ai-desc{font-size:15px;line-height:1.8;color:var(--mid);margin:16px 0 40px;}
-.btn-ai{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--navy);color:var(--white);border:none;
-  padding:17px 40px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  cursor:pointer;font-family:'Open Sans',sans-serif;transition:.2s;
-}
-.btn-ai:hover{background:var(--navy2);}
-.ai-powered{font-size:11px;color:var(--mid);letter-spacing:1.5px;text-transform:uppercase;margin-top:14px;}
-
 /* ── BIG CTA ── */
-.big-cta{
-  background:var(--amber);padding:80px 48px;text-align:center;
-}
-.big-cta h2{
-  font-family:'Oswald',sans-serif;font-size:clamp(42px,5vw,72px);
-  font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:2px;
-  margin-bottom:12px;line-height:1;
-}
+.big-cta{background:var(--amber);padding:80px 48px;text-align:center;}
+.big-cta h2{font-family:'Oswald',sans-serif;font-size:clamp(42px,5vw,72px);font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;line-height:1;}
 .big-cta p{font-size:15px;color:rgba(13,27,42,0.65);margin-bottom:36px;}
 .cta-phone{
   display:inline-flex;align-items:center;gap:14px;
   background:var(--navy);color:var(--white);
-  padding:20px 48px;
-  font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;letter-spacing:2px;
-  transition:.2s;
+  padding:20px 48px;font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;letter-spacing:2px;transition:.2s;
 }
 .cta-phone:hover{background:var(--navy2);}
 .cta-sub{font-size:12px;color:rgba(13,27,42,0.55);margin-top:16px;letter-spacing:1.5px;text-transform:uppercase;}
@@ -430,16 +285,9 @@ nav{
 .contact-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
 .contact-h{font-family:'Oswald',sans-serif;font-size:38px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:32px;}
 .c-rows{display:flex;flex-direction:column;gap:0;margin-bottom:36px;}
-.c-row{
-  display:flex;align-items:flex-start;gap:18px;
-  padding:18px 0;border-bottom:1px solid var(--border);
-}
+.c-row{display:flex;align-items:flex-start;gap:18px;padding:18px 0;border-bottom:1px solid var(--border);}
 .c-row:last-child{border-bottom:none;}
-.c-icn{
-  width:40px;height:40px;flex-shrink:0;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;font-size:16px;
-}
+.c-icn{width:40px;height:40px;flex-shrink:0;background:var(--navy);display:flex;align-items:center;justify-content:center;}
 .c-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid);}
 .c-val{font-size:14px;font-weight:600;color:var(--navy);margin-top:2px;}
 .hours-table{width:100%;border-collapse:collapse;}
@@ -451,20 +299,11 @@ nav{
 .form-title{font-family:'Oswald',sans-serif;font-size:38px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
 .form-sub{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:28px;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
-.fld{
-  background:var(--off);border:1px solid var(--border);
-  color:var(--navy);padding:13px 16px;font-size:13px;
-  font-family:'Open Sans',sans-serif;outline:none;width:100%;
-  transition:.2s;
-}
+.fld{background:var(--off);border:1px solid var(--border);color:var(--navy);padding:13px 16px;font-size:13px;font-family:'Open Sans',sans-serif;outline:none;width:100%;transition:.2s;}
 .fld:focus{border-color:var(--amber);background:var(--white);}
 .fld::placeholder{color:var(--mid);}
 textarea.fld{resize:none;}
-.submit{
-  width:100%;background:var(--navy);color:var(--white);
-  padding:15px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  border:none;cursor:pointer;font-family:'Open Sans',sans-serif;transition:.2s;
-}
+.submit{width:100%;background:var(--navy);color:var(--white);padding:15px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;font-family:'Open Sans',sans-serif;transition:.2s;}
 .submit:hover{background:var(--navy2);}
 
 /* ── FOOTER ── */
@@ -476,25 +315,18 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
 .f-col h4{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1);}
 .f-col a{display:block;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:10px;transition:.2s;}
 .f-col a:hover{color:var(--amber2);}
-.footer-bottom{
-  max-width:1200px;margin:0 auto;
-  border-top:1px solid rgba(255,255,255,0.1);padding-top:28px;
-  display:flex;justify-content:space-between;align-items:center;
-}
+.footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:28px;display:flex;justify-content:space-between;align-items:center;}
 .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.3);}
 .footer-bottom span{color:var(--amber2);}
 
 /* ── TICKER ── */
 .ticker{background:var(--amber);overflow:hidden;padding:12px 0;}
 .ticker-track{display:flex;white-space:nowrap;animation:tick 28s linear infinite;}
-.ticker-item{
-  font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--navy);padding:0 28px;
-}
+.ticker-item{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);padding:0 28px;}
 .ticker-item::after{content:'•';margin-left:28px;opacity:0.4;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── REVEAL ANIMATIONS ── */
+/* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.in{opacity:1;transform:none;}
 .rl{opacity:0;transform:translateX(-20px);transition:opacity .65s ease,transform .65s ease;}
@@ -539,19 +371,150 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
   .big-cta{padding:60px 24px;}
   .contact{padding:72px 24px;}
   footer{padding:60px 24px 32px;}
-  .ai-section{padding:80px 24px;}
 }
 </style>
 </head>
 <body>
 
+<!-- SVG SPRITE (hidden) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <!-- phone -->
+  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+  </symbol>
+  <!-- location pin -->
+  <symbol id="ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <!-- clock -->
+  <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <!-- star -->
+  <symbol id="ico-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </symbol>
+  <!-- chat bubble -->
+  <symbol id="ico-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+  </symbol>
+  <!-- wrench -->
+  <symbol id="ico-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+  </symbol>
+  <!-- lightning bolt -->
+  <symbol id="ico-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </symbol>
+  <!-- shield -->
+  <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+  <!-- package / box -->
+  <symbol id="ico-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
+    <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+    <line x1="12" y1="22.08" x2="12" y2="12"/>
+  </symbol>
+  <!-- moon / 24hr dispatch -->
+  <symbol id="ico-dispatch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="12" y1="8" x2="12" y2="12"/>
+    <line x1="12" y1="16" x2="12.01" y2="16"/>
+  </symbol>
+  <!-- van / truck -->
+  <symbol id="ico-van" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="3" width="15" height="13" rx="1"/>
+    <path d="M16 8h4l3 3v5h-7V8z"/>
+    <circle cx="5.5" cy="18.5" r="2.5"/>
+    <circle cx="18.5" cy="18.5" r="2.5"/>
+  </symbol>
+  <!-- checkmark circle -->
+  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+  <!-- battery -->
+  <symbol id="ico-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
+    <line x1="23" y1="13" x2="23" y2="11"/>
+    <line x1="5" y1="12" x2="13" y2="12"/>
+    <line x1="9" y1="8" x2="9" y2="16"/>
+  </symbol>
+  <!-- brake disc -->
+  <symbol id="ico-brake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="4"/>
+    <line x1="12" y1="2" x2="12" y2="6"/>
+    <line x1="12" y1="18" x2="12" y2="22"/>
+    <line x1="2" y1="12" x2="6" y2="12"/>
+    <line x1="18" y1="12" x2="22" y2="12"/>
+  </symbol>
+  <!-- belt / loop -->
+  <symbol id="ico-belt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="17 1 21 5 17 9"/>
+    <path d="M3 11V9a4 4 0 014-4h14"/>
+    <polyline points="7 23 3 19 7 15"/>
+    <path d="M21 13v2a4 4 0 01-4 4H3"/>
+  </symbol>
+  <!-- alternator / zap circle -->
+  <symbol id="ico-alt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="13 8 9 12 13 12 11 16"/>
+  </symbol>
+  <!-- key -->
+  <symbol id="ico-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+  </symbol>
+  <!-- droplet -->
+  <symbol id="ico-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
+  </symbol>
+  <!-- snowflake -->
+  <symbol id="ico-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="2" x2="12" y2="22"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="5.64" y2="18.36"/>
+    <line x1="12" y1="2" x2="9" y2="5"/>
+    <line x1="12" y1="2" x2="15" y2="5"/>
+    <line x1="12" y1="22" x2="9" y2="19"/>
+    <line x1="12" y1="22" x2="15" y2="19"/>
+  </symbol>
+  <!-- search -->
+  <symbol id="ico-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </symbol>
+  <!-- credit card -->
+  <symbol id="ico-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+    <line x1="1" y1="10" x2="23" y2="10"/>
+  </symbol>
+  <!-- mail -->
+  <symbol id="ico-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <!-- arrow right -->
+  <symbol id="ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/>
+    <polyline points="12 5 19 12 12 19"/>
+  </symbol>
+</svg>
+
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span>📍 Charlotte, NC &amp; Surrounding Areas &nbsp;·&nbsp; Mon–Sun 8AM–8PM · 24/7 Dispatch</span>
+    <span>Charlotte, NC &amp; Surrounding Areas &nbsp;·&nbsp; Mon–Sun 8AM–8PM &nbsp;·&nbsp; 24/7 Dispatch</span>
     <div class="topbar-right">
       <span>mr.quickiesautomotive@gmail.com</span>
-      <a href="tel:7046097022" class="topbar-phone">☎ (704) 609-7022</a>
+      <a href="tel:7046097022" class="topbar-phone">
+        <svg width="12" height="12"><use href="#ico-phone"/></svg>
+        (704) 609-7022
+      </a>
     </div>
   </div>
 </div>
@@ -588,45 +551,71 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
       <h1>Expert Repairs.<br/><span>Your Location.</span><br/>Zero Hassle.</h1>
       <p class="hero-desc">Skip the tow truck and the waiting room. Mr. Quickie's certified mechanics come directly to your home, office, or wherever you're stranded — same-day service, transparent pricing, 12-month warranty.</p>
       <div class="hero-btns">
-        <a href="tel:7046097022" class="btn-amber">☎ Call (704) 609-7022</a>
-        <a href="#how" class="btn-outline">How It Works →</a>
+        <a href="tel:7046097022" class="btn-amber">
+          <svg width="16" height="16" style="color:var(--navy)"><use href="#ico-phone"/></svg>
+          Call (704) 609-7022
+        </a>
+        <a href="#how" class="btn-outline">
+          How It Works
+          <svg width="16" height="16"><use href="#ico-arrow"/></svg>
+        </a>
       </div>
       <div class="hero-badges">
-        <div class="hero-badge">⚡ Same-Day Service</div>
-        <div class="hero-badge">🛡️ 12-Month Warranty</div>
-        <div class="hero-badge">📦 Free Parts Delivery</div>
-        <div class="hero-badge">🌙 24/7 Dispatch</div>
+        <div class="hero-badge">
+          <span class="ico" style="width:16px;height:16px;color:rgba(255,255,255,0.6)"><svg width="16" height="16"><use href="#ico-bolt"/></svg></span>
+          Same-Day Service
+        </div>
+        <div class="hero-badge">
+          <span class="ico" style="width:16px;height:16px;color:rgba(255,255,255,0.6)"><svg width="16" height="16"><use href="#ico-shield"/></svg></span>
+          12-Month Warranty
+        </div>
+        <div class="hero-badge">
+          <span class="ico" style="width:16px;height:16px;color:rgba(255,255,255,0.6)"><svg width="16" height="16"><use href="#ico-package"/></svg></span>
+          Free Parts Delivery
+        </div>
+        <div class="hero-badge">
+          <span class="ico" style="width:16px;height:16px;color:rgba(255,255,255,0.6)"><svg width="16" height="16"><use href="#ico-clock"/></svg></span>
+          24/7 Dispatch
+        </div>
       </div>
     </div>
     <div class="hero-card reveal d1">
       <div class="hcard-title">Quick Contact</div>
       <div class="hcard-items">
         <div class="hcard-item">
-          <div class="hcard-icon">📞</div>
+          <div class="hcard-icon">
+            <svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-phone"/></svg>
+          </div>
           <div>
             <div class="hcard-label">Dispatch Line</div>
             <div class="hcard-val">(704) 609-7022</div>
           </div>
         </div>
         <div class="hcard-item">
-          <div class="hcard-icon">📍</div>
+          <div class="hcard-icon">
+            <svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-pin"/></svg>
+          </div>
           <div>
             <div class="hcard-label">Service Area</div>
-            <div class="hcard-val">Charlotte, NC & Surrounding</div>
+            <div class="hcard-val">Charlotte, NC &amp; Surrounding</div>
           </div>
         </div>
         <div class="hcard-item">
-          <div class="hcard-icon">🕐</div>
+          <div class="hcard-icon">
+            <svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-clock"/></svg>
+          </div>
           <div>
             <div class="hcard-label">Hours</div>
             <div class="hcard-val">Mon–Sun 8AM–8PM · 24/7 Dispatch</div>
           </div>
         </div>
         <div class="hcard-item">
-          <div class="hcard-icon">⭐</div>
+          <div class="hcard-icon">
+            <svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-star"/></svg>
+          </div>
           <div>
             <div class="hcard-label">Rating</div>
-            <div class="hcard-val">4.4★ · 149 Google Reviews</div>
+            <div class="hcard-val">4.4 / 5 · 149 Google Reviews</div>
           </div>
         </div>
       </div>
@@ -668,28 +657,36 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
 <div class="trust">
   <div class="trust-inner">
     <div class="trust-item reveal">
-      <div class="trust-icon">⭐</div>
+      <div class="trust-icon-wrap">
+        <svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-star"/></svg>
+      </div>
       <div>
         <div class="trust-num">4.4</div>
         <div class="trust-label">Star Rating</div>
       </div>
     </div>
     <div class="trust-item reveal d1">
-      <div class="trust-icon">💬</div>
+      <div class="trust-icon-wrap">
+        <svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-chat"/></svg>
+      </div>
       <div>
         <div class="trust-num" data-count="149">0</div>
         <div class="trust-label">Google Reviews</div>
       </div>
     </div>
     <div class="trust-item reveal d2">
-      <div class="trust-icon">🔧</div>
+      <div class="trust-icon-wrap">
+        <svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-wrench"/></svg>
+      </div>
       <div>
         <div class="trust-num">60+</div>
         <div class="trust-label">Yrs Experience</div>
       </div>
     </div>
     <div class="trust-item reveal d3">
-      <div class="trust-icon">🕐</div>
+      <div class="trust-icon-wrap">
+        <svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-clock"/></svg>
+      </div>
       <div>
         <div class="trust-num">24/7</div>
         <div class="trust-label">Dispatch</div>
@@ -710,28 +707,28 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
       <div class="step-cell reveal">
         <div class="step-bar"></div>
         <div class="step-num">01</div>
-        <div class="step-icon-lg">📞</div>
+        <div class="step-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-phone"/></svg></div>
         <div class="step-title">Call or Text</div>
         <div class="step-body">Reach our 24/7 dispatch line and speak directly with a certified mechanic — not an answering service. Tell us your issue and location.</div>
       </div>
       <div class="step-cell reveal d1">
         <div class="step-bar"></div>
         <div class="step-num">02</div>
-        <div class="step-icon-lg">💬</div>
+        <div class="step-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-chat"/></svg></div>
         <div class="step-title">Get Your Quote</div>
         <div class="step-body">Tell us your year, make, and model. We'll give you a transparent, upfront price — no hidden fees, no surprise charges at the end.</div>
       </div>
       <div class="step-cell reveal d2">
         <div class="step-bar"></div>
         <div class="step-num">03</div>
-        <div class="step-icon-lg">🚐</div>
+        <div class="step-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-van"/></svg></div>
         <div class="step-title">We Dispatch Fast</div>
         <div class="step-body">We pick up the parts and head straight to you — home, office, hotel, parking lot. Anywhere in Charlotte or surrounding areas.</div>
       </div>
       <div class="step-cell reveal d3">
         <div class="step-bar"></div>
         <div class="step-num">04</div>
-        <div class="step-icon-lg">✅</div>
+        <div class="step-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-check"/></svg></div>
         <div class="step-title">Back on the Road</div>
         <div class="step-body">Most repairs done in hours. Pay virtually, receive your 12-month warranty documentation, and get on with your day.</div>
       </div>
@@ -752,28 +749,36 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
       <div class="sec-rule"></div>
       <div class="why-list">
         <div class="why-row">
-          <div class="why-check">✓</div>
+          <div class="why-check">
+            <svg width="18" height="18" style="color:var(--navy)"><use href="#ico-check"/></svg>
+          </div>
           <div>
             <div class="why-ttl">No Tow Trucks. No Rental Cars.</div>
             <div class="why-body">Traditional shops require towing, rentals, and wasted days. We eliminate all of that — certified mechanics delivered to your door.</div>
           </div>
         </div>
         <div class="why-row">
-          <div class="why-check">✓</div>
+          <div class="why-check">
+            <svg width="18" height="18" style="color:var(--navy)"><use href="#ico-check"/></svg>
+          </div>
           <div>
             <div class="why-ttl">60+ Years Combined Experience</div>
             <div class="why-body">Every technician on our team is certified and experienced. When you call, you speak with someone who knows exactly what they're doing.</div>
           </div>
         </div>
         <div class="why-row">
-          <div class="why-check">✓</div>
+          <div class="why-check">
+            <svg width="18" height="18" style="color:var(--navy)"><use href="#ico-check"/></svg>
+          </div>
           <div>
-            <div class="why-ttl">Free Parts Pickup & Delivery</div>
+            <div class="why-ttl">Free Parts Pickup &amp; Delivery</div>
             <div class="why-body">We source and deliver every part you need — no back-and-forth, no delays. We come fully equipped for the job.</div>
           </div>
         </div>
         <div class="why-row">
-          <div class="why-check">✓</div>
+          <div class="why-check">
+            <svg width="18" height="18" style="color:var(--navy)"><use href="#ico-check"/></svg>
+          </div>
           <div>
             <div class="why-ttl">12-Month Warranty, No Exceptions</div>
             <div class="why-body">Every repair we complete is backed by a full 12-month warranty. We stand behind our work — unconditionally.</div>
@@ -797,67 +802,67 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
     </div>
     <div class="services-grid">
       <div class="svc-card reveal">
-        <div class="svc-icon">🔋</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-battery"/></svg></div>
         <div class="svc-name">Battery Replacement</div>
         <div class="svc-price">$120+</div>
         <div class="svc-desc">Battery, installation &amp; connection test. 12-month guarantee included.</div>
-        <div class="svc-badge">✓ 12-Month Warranty</div>
+        <div class="svc-badge">12-Month Warranty</div>
       </div>
       <div class="svc-card reveal d1">
-        <div class="svc-icon">🛑</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-brake"/></svg></div>
         <div class="svc-name">Brake Pads</div>
         <div class="svc-price">$125 / Axle</div>
         <div class="svc-desc">Front or rear brake pad replacement. Quality pads backed by an 18-month guarantee.</div>
-        <div class="svc-badge">✓ 18-Month Warranty</div>
+        <div class="svc-badge">18-Month Warranty</div>
       </div>
       <div class="svc-card reveal d2">
-        <div class="svc-icon">⚡</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-bolt"/></svg></div>
         <div class="svc-name">Spark Plugs</div>
         <div class="svc-price">$50–$75 / Cyl.</div>
         <div class="svc-desc">OEM-spec or performance plugs. Improves fuel economy and performance.</div>
-        <div class="svc-badge">✓ Quality Parts Only</div>
+        <div class="svc-badge">Quality Parts Only</div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-icon">🔁</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-belt"/></svg></div>
         <div class="svc-name">Serpentine Belt</div>
         <div class="svc-price">$175–$300</div>
         <div class="svc-desc">Belt replacement including tensioner inspection. Prevents catastrophic engine failure.</div>
-        <div class="svc-badge">✓ Free Parts Delivery</div>
+        <div class="svc-badge">Free Parts Delivery</div>
       </div>
       <div class="svc-card reveal d1">
-        <div class="svc-icon">🔌</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-alt"/></svg></div>
         <div class="svc-name">Alternator</div>
         <div class="svc-price">$200–$750</div>
         <div class="svc-desc">Complete alternator replacement with full charging system test.</div>
-        <div class="svc-badge">✓ 12-Month Warranty</div>
+        <div class="svc-badge">12-Month Warranty</div>
       </div>
       <div class="svc-card reveal d2">
-        <div class="svc-icon">🔑</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-key"/></svg></div>
         <div class="svc-name">Starter Replacement</div>
         <div class="svc-price">$175–$350</div>
         <div class="svc-desc">Starter motor replacement. We diagnose first to confirm the issue before any work.</div>
-        <div class="svc-badge">✓ Same-Day Service</div>
+        <div class="svc-badge">Same-Day Service</div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-icon">💧</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-drop"/></svg></div>
         <div class="svc-name">Water Pump</div>
         <div class="svc-price">$250–$750</div>
         <div class="svc-desc">Water pump replacement including coolant flush. Prevents overheating and engine damage.</div>
-        <div class="svc-badge">✓ Free Parts Delivery</div>
+        <div class="svc-badge">Free Parts Delivery</div>
       </div>
       <div class="svc-card reveal d1">
-        <div class="svc-icon">❄️</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-snow"/></svg></div>
         <div class="svc-name">A/C Condenser</div>
         <div class="svc-price">$300–$800</div>
         <div class="svc-desc">Condenser replacement and full system recharge. Restores cooling to factory performance.</div>
-        <div class="svc-badge">✓ 12-Month Warranty</div>
+        <div class="svc-badge">12-Month Warranty</div>
       </div>
       <div class="svc-card reveal d2">
-        <div class="svc-icon">🔍</div>
+        <div class="svc-ico"><svg width="22" height="22" style="color:var(--amber2)"><use href="#ico-search"/></svg></div>
         <div class="svc-name">Full Diagnostics</div>
         <div class="svc-price">$100 / Hour</div>
         <div class="svc-desc">21-point health report or targeted scan. Fee credited toward repair cost if you proceed.</div>
-        <div class="svc-badge">✓ Credited to Repair</div>
+        <div class="svc-badge">Credited to Repair</div>
       </div>
     </div>
   </div>
@@ -874,13 +879,13 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
       </div>
       <div class="rating-block reveal d2">
         <div class="rating-big">4.4</div>
-        <div class="rating-stars">★★★★½</div>
+        <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#189;</div>
         <div class="rating-count">149 Google Reviews</div>
       </div>
     </div>
     <div class="rev-grid">
       <div class="rev-card reveal">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">Amazing work! Called for an emergency repair for a coil and spark plugs and not only was he fast but very efficient. Very reasonably priced and overall a 10/10 experience! He even explained the parts I needed. Definitely will be using this service again!</p>
         <div class="rev-divider"></div>
@@ -888,7 +893,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
         <div class="rev-meta">Charlotte, NC · 8 months ago</div>
       </div>
       <div class="rev-card reveal d1">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">I had a great experience with Miracle. She was friendly, helpful, and made sure everything was taken care of quickly and correctly. You can tell she genuinely cares about her customers. Her professionalism and patience made my experience so much better.</p>
         <div class="rev-divider"></div>
@@ -896,7 +901,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
         <div class="rev-meta">Charlotte, NC · 6 months ago</div>
       </div>
       <div class="rev-card reveal d2">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">He came to my hotel and fixed my car in about 2 hours — and charged $250 less than other mechanics quoted me. Fast, reliable, and honest. Living up to his name. Would recommend to anyone in Charlotte who needs a mobile mechanic.</p>
         <div class="rev-divider"></div>
@@ -904,7 +909,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
         <div class="rev-meta">Charlotte, NC</div>
       </div>
       <div class="rev-card reveal">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">Completed repairs in under 2 hours on a Sunday morning call. No runaround, no inflated prices — just showed up and got it done. This is exactly what you want when your car breaks down unexpectedly.</p>
         <div class="rev-divider"></div>
@@ -912,7 +917,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
         <div class="rev-meta">Charlotte, NC</div>
       </div>
       <div class="rev-card reveal d1">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">Great service and fair prices. Fast repair, explained everything clearly, and was totally transparent about what I needed vs. what could wait. I didn't feel like I was being taken advantage of at all.</p>
         <div class="rev-divider"></div>
@@ -920,7 +925,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
         <div class="rev-meta">Charlotte, NC</div>
       </div>
       <div class="rev-card reveal d2">
-        <div class="rev-stars">★★★★★</div>
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <span class="rev-quote">"</span>
         <p class="rev-text">Used Mr. Quickie for an alternator issue. They picked up the part, came to my workplace, and had me running by lunch. I didn't miss a single meeting. This is the future of auto repair — 100% recommend.</p>
         <div class="rev-divider"></div>
@@ -955,31 +960,15 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
   </div>
 </div>
 
-<!-- AI RECEPTIONIST -->
-<section class="ai-section">
-  <div class="ai-inner">
-    <div class="eyebrow">AI Receptionist</div>
-    <h2 class="sec-h">Talk to Orbit AI Now</h2>
-    <p class="ai-desc">Get instant answers about pricing, availability, or services — our AI receptionist is available around the clock, just like our dispatch line.</p>
-    <div class="ai-ring-wrap">
-      <div class="ai-ring-1"></div>
-      <div class="ai-ring-2"></div>
-      <div class="ai-ring-3"></div>
-      <div class="ai-core">🎙️</div>
-    </div>
-    <button class="btn-ai" onclick="triggerRetell()">
-      🎙️ Start Talking Now
-    </button>
-    <p class="ai-powered">Powered by Orbit AI · Available 24/7</p>
-  </div>
-</section>
-
 <!-- BIG CTA -->
 <div class="big-cta">
   <h2>Broken Down?<br/>We Come to You.</h2>
   <p>Our 24/7 dispatch line connects you directly with a certified mechanic — not a call center.</p>
   <div>
-    <a href="tel:7046097022" class="cta-phone">☎ (704) 609-7022</a>
+    <a href="tel:7046097022" class="cta-phone">
+      <svg width="24" height="24" style="color:var(--amber2)"><use href="#ico-phone"/></svg>
+      (704) 609-7022
+    </a>
   </div>
   <p class="cta-sub">24/7 Dispatch · Charlotte, NC &amp; Surrounding Areas</p>
 </div>
@@ -988,31 +977,31 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
 <section id="contact" class="contact">
   <div class="contact-grid">
     <div class="reveal">
-      <h3 class="contact-h">Hours &<br/>Contact</h3>
+      <h3 class="contact-h">Hours &amp;<br/>Contact</h3>
       <div class="c-rows">
         <div class="c-row">
-          <div class="c-icn">📞</div>
+          <div class="c-icn"><svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-phone"/></svg></div>
           <div>
             <div class="c-lbl">Phone / Dispatch</div>
             <a href="tel:7046097022" class="c-val" style="color:var(--amber3);">(704) 609-7022</a>
           </div>
         </div>
         <div class="c-row">
-          <div class="c-icn">✉️</div>
+          <div class="c-icn"><svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-mail"/></svg></div>
           <div>
             <div class="c-lbl">Email</div>
             <div class="c-val">mr.quickiesautomotive@gmail.com</div>
           </div>
         </div>
         <div class="c-row">
-          <div class="c-icn">📍</div>
+          <div class="c-icn"><svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-pin"/></svg></div>
           <div>
             <div class="c-lbl">Service Area</div>
             <div class="c-val">Charlotte, NC &amp; Surrounding Areas</div>
           </div>
         </div>
         <div class="c-row">
-          <div class="c-icn">💳</div>
+          <div class="c-icn"><svg width="18" height="18" style="color:var(--amber2)"><use href="#ico-card"/></svg></div>
           <div>
             <div class="c-lbl">Payment</div>
             <div class="c-val">Virtual, Card, or Cash</div>
@@ -1035,7 +1024,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
       </div>
       <input class="fld" type="text" placeholder="Vehicle Year, Make &amp; Model" style="margin-bottom:12px;"/>
       <textarea class="fld" rows="4" placeholder="Describe the issue..." style="margin-bottom:12px;"></textarea>
-      <button class="submit" onclick="sendQuote(this)">Send Quote Request →</button>
+      <button class="submit" onclick="sendQuote(this)">Send Quote Request</button>
     </div>
   </div>
 </section>
@@ -1069,7 +1058,7 @@ footer{background:var(--navy);padding:64px 48px 36px;border-top:3px solid var(--
   </div>
   <div class="footer-bottom">
     <p>© 2026 Mr. Quickie Mobile Mechanics LLC · Charlotte, NC</p>
-    <p><span>⭐ 4.4 / 5</span> · 149 Google Reviews</p>
+    <p><span>4.4 / 5</span> · 149 Google Reviews</p>
   </div>
 </footer>
 
@@ -1102,18 +1091,9 @@ document.querySelectorAll('.hours-table tr').forEach(r => {
 
 // Form
 function sendQuote(btn) {
-  btn.textContent = '✓ Request Sent — We\'ll Text You a Quote Shortly!';
+  btn.textContent = 'Request Sent — We\'ll Text You a Quote Shortly';
   btn.style.background = '#1a7a3a';
   btn.disabled = true;
-}
-
-// Retell trigger
-function triggerRetell() {
-  const fab = document.querySelector('[class*="retell"][class*="fab"], [id*="retell"] button, retell-widget-fab, .retell-fab')
-            || document.querySelector('button[class*="widget"]')
-            || document.querySelector('#retell-widget-container button');
-  if (fab) { fab.click(); return; }
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
 // Mobile nav
@@ -1123,7 +1103,7 @@ function hamMenu(el) {
   const m = document.createElement('div');
   m.id = 'mob-nav';
   m.style.cssText = 'position:fixed;top:112px;inset-x:0;background:var(--white);z-index:99;border-top:1px solid var(--border);padding:16px 24px;display:flex;flex-direction:column;gap:2px;box-shadow:0 8px 32px rgba(0,0,0,0.12);';
-  [['#how','How It Works'],['#services','Services & Pricing'],['#reviews','Reviews'],['#contact','Contact'],['tel:7046097022','☎ (704) 609-7022']].forEach(([h, l]) => {
+  [['#how','How It Works'],['#services','Services & Pricing'],['#reviews','Reviews'],['#contact','Contact'],['tel:7046097022','(704) 609-7022']].forEach(([h, l]) => {
     const a = document.createElement('a');
     a.href = h; a.textContent = l;
     a.style.cssText = 'padding:14px 0;font-size:14px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--border);';
