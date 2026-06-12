@@ -7,6 +7,19 @@
 <meta name="description" content="Charlotte's #1 mobile mechanic service. Mr. Quickie comes to your home, work, or wherever you are. 24/7 dispatch. Call (704) 609-7022."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script
+  id="retell-widget"
+  src="https://dashboard.retellai.com/retell-widget-v2.js"
+  data-voice-public-key="public_key_5a5680d093a6b058a29b2"
+  data-voice-agent-id="agent_faa6a004600b27c1b3ceaabd30"
+  data-title="Mr. Quickie AI Receptionist"
+  data-color="#c21111"
+  data-fab-text="Talk to Us"
+  data-bot-name="Orbit AI Receptionist"
+  data-popup-message="Hi! I'm the Mr. Quickie AI receptionist. Ask me anything about our mobile mechanic services!"
+  data-show-ai-popup="true"
+  data-show-ai-popup-time="6"
+></script>
 <style>
 :root {
   --red:      #c21111;
@@ -78,7 +91,7 @@ nav{
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6da36?w=1920&q=85');
+  background-image:url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1920&q=85');
   background-size:cover;background-position:center 60%;
 }
 .hero-bg::after{
@@ -520,7 +533,7 @@ footer{background:var(--black3);border-top:1px solid var(--border2);padding:72px
 <section class="advantages">
   <div class="adv-inner">
     <div class="adv-img rl">
-      <img src="https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=900&q=80" alt="Mobile mechanic at work"/>
+      <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80" alt="Mobile mechanic at work"/>
     </div>
     <div class="adv-content rr">
       <div class="sec-tag">Why Mr. Quickie</div>
@@ -748,6 +761,26 @@ footer{background:var(--black3);border-top:1px solid var(--border2);padding:72px
   </div>
 </div>
 
+<!-- AI RECEPTIONIST -->
+<section style="padding:120px 72px;background:var(--black3);border-top:1px solid var(--border);text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="sec-tag" style="justify-content:center;">AI Receptionist</div>
+    <h2 class="sec-title" style="margin-bottom:20px;">Talk to <em>Orbit AI</em><br/>Right Now.</h2>
+    <p style="font-size:16px;color:var(--text);line-height:1.8;margin-bottom:48px;">Get instant answers about pricing, availability, or services — our AI receptionist is available 24/7, just like our dispatch line.</p>
+    <div style="position:relative;width:120px;height:120px;margin:0 auto 40px;">
+      <div style="position:absolute;inset:0;border-radius:50%;border:2px solid var(--red);animation:ring1 2s ease-in-out infinite;"></div>
+      <div style="position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(194,17,17,0.35);animation:ring1 2s ease-in-out infinite .4s;"></div>
+      <div style="position:absolute;inset:-24px;border-radius:50%;border:1px solid rgba(194,17,17,0.15);animation:ring1 2s ease-in-out infinite .8s;"></div>
+      <div style="position:absolute;inset:0;border-radius:50%;background:var(--red-glow);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:44px;">🎙️</div>
+    </div>
+    <style>@keyframes ring1{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.6}}</style>
+    <button onclick="triggerRetell()" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;border:none;padding:18px 40px;font-size:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='linear-gradient(135deg,var(--red3),var(--red))'" onmouseout="this.style.background='linear-gradient(135deg,var(--red),var(--red2))'">
+      <span>🎙️</span> Start Talking Now
+    </button>
+    <p style="font-size:12px;color:var(--muted);margin-top:16px;letter-spacing:1px;text-transform:uppercase;">Powered by Orbit AI · Available 24/7</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="contact-inner">
@@ -870,6 +903,15 @@ function sendQuote(btn){
   btn.textContent='✓ Request Sent — We\'ll Text You a Quote Shortly!';
   btn.style.background='#1a7a3a';
   btn.disabled=true;
+}
+
+// Retell trigger
+function triggerRetell() {
+  const fab = document.querySelector('[class*="retell"][class*="fab"], [id*="retell"] button, retell-widget-fab, .retell-fab')
+            || document.querySelector('button[class*="widget"]')
+            || document.querySelector('#retell-widget-container button');
+  if (fab) { fab.click(); return; }
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
 // Mobile nav
